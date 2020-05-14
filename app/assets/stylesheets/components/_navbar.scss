@@ -1,12 +1,56 @@
-.navbar-lewagon {
+.navbar {
+    background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+  h1{
+    font-size: 40px;
+    color: white;
+    font-family: 'Damion', cursive;
+  }
+}
+.logo-navbar{
+  width: 50px;
+  height:50px;
+}
+.invitation{
+  color: white;
+  cursor: pointer;
+  position: relative;
+  h4{
+    font-family: 'Damion', cursive;
+  }
+  margin: 0 15px;
+  display:flex;
+  align-items: center;
+}
+.invitation-block{
+  width: 300px;
+  padding-bottom: 10px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display:none;
+  position: absolute;
+  top: 62px;
+  left: -70px;
+  z-index: 1;
+  h1{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    }
+}
+.invitation-block-update{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.avatar-group{
+  display:flex;
   justify-content: space-between;
-  background: white;
+}
+.title{
+  margin-left: 150px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.notif{
+  color: red;
 }

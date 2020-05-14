@@ -83,3 +83,4 @@ production:
   database: Note_it_project_production
   username: Note_it_project
   password: <%= ENV['NOTE_IT_PROJECT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>

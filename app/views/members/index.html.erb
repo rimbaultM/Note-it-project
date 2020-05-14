@@ -1,0 +1,68 @@
+<div class="navbar">
+  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
+  <div class="title">
+    <h1>Note'it</h1>
+  </div>
+  <div class="avatar-group">
+   <div class="invitation">
+      <h4>Note'Invitations</h4>
+    </div>
+    <div class="avatar-deco">
+      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <% @userc.each do |user| %>
+    <% if @notegroup.user == user %>
+         <div class="member-chef" > <h2> Note'Chef : </h2> <%= cl_image_tag user.photo.key, class: 'avatar-member-chef' %> </div>
+    <% end %>
+  <% end %>
+  <div class="members-team" >
+    <h2> Note'Membres : </h2>
+    <div class="member-team" >
+      <% @notegroup.members.each do |member| %>
+        <% if @members.count  <= 1 %>
+          <p class="nothing"> aucun membres </p>
+        <% else %>
+          <% if member.user == @notegroup.user%>
+          <% else %>
+            <%= cl_image_tag member.user.photo.key, class: 'avatar-member' %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <div class="member-add">
+        <h2>Ajouter un Note'Membre</h2>
+        <%= form_tag notegroup_members_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "rechercher un membre"
+          %>
+          <%= submit_tag "rechercher", class: "btn btn-primary" %>
+        <% end %>
+
+      <div class="add-friend-order">
+        <% @users.each do |user| %>
+          <% if @notegroup.user != user %>
+            <%= link_to user_notegroup_path(user, @notegroup),class: "add-friend-link" do  %>
+              <div class="add-friend-member">
+               <%=cl_image_tag user.photo.key, class: 'avatar-list' %>
+               <p class="friend-name"><%= user.name %></p>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

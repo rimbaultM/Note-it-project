@@ -1,1 +1,37 @@
-// Specific CSS for your home-page
+.homebackground{
+  background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid black;
+}
+.home_logo{
+  width: 300px;
+  display: block;
+  margin: 200px auto 50px auto;
+  img{
+    width: 300px;
+  }
+  &:hover{
+    opacity: 0.5;
+  }
+}
+.home_logo {
+    -moz-transition: all .5s linear;
+  }
+
+.home_logo.rotate {
+    -moz-transform:rotate(720deg);
+}
+.title-home{
+  text-align: center;
+  margin-right: 50px;
+  h1{
+    font-size: 120px;
+    color: white;
+    font-family: 'Damion', cursive;
+  }
+
+}
+

@@ -1,0 +1,148 @@
+.index{
+  position: relative;
+}
+.note-card-blank{
+  margin: 0 10px 10px 10px;
+}
+.note-card-blank-fond{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+  background-color: rgba(240,240,240,0.8);
+}
+.add-notegroup{
+  margin: 25px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  h4{
+    font-size: 35px;
+    font-family: 'Damion', cursive;
+  }
+  i{
+    margin-left: 20px;
+    font-size:35px;
+    color: #00103c;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.12);
+    &:hover{
+      color: white;
+      background-color: #00103c ;
+      border-radius: 5px;
+      padding: 1px 2px 0 2px;
+    }
+  }
+
+}
+
+.notes-title{
+  background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+  position: relative;
+  border-top-right-radius: 8px;
+  border-top-left-radius:8px;
+  text-align: center;
+  padding-bottom: 5px;
+  .notes-header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    .del-group{
+      font-size: 15px;
+      color:white;
+    }
+    h2{
+      color: white;
+      padding: 5px 0;
+      font-family: 'Damion', cursive;
+      margin-bottom: 0;
+    }
+    .note-member-add{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      i{
+        color: white;
+        margin-right: 5px;
+      }
+      .add-friend{
+        font-size: 15px;
+        color:white;
+      }
+      .add-note{
+        font-size: 21px;
+        color:white;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.my-note{
+  padding-bottom: 8px;
+  .border{
+    display:block;
+    margin: 0 auto;
+    border-bottom: 2px solid rgb(150,150,150);
+    width: 70%;
+
+  }
+}
+  .my-note-space{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin: 0 10px;
+    .note-title{
+      color: black;
+      padding: 5px 0;
+      font-family: 'Damion', cursive;
+    }
+  }
+.my-note-space-2{
+  display:flex;
+  justify-content: space-between;
+  margin: 2px 10px 0 10px;
+}
+.my-note-space-3{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 10px 5px 10px;
+  .date-done{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+   .note-done-false{
+      color: red;
+      margin-right: 10px;
+    }
+    .note-done-true{
+      color: green;
+      margin-right: 10px;
+    }
+    .note-date-green{
+      color: green;
+      margin: 0;
+    }
+    .note-date-red{
+      color: red;
+      margin: 0;
+    }
+  }
+}
+
+
+.friend{
+  background-color: white;
+  opacity: 0.95;
+  width: 50vw;
+  height: 400px;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display:none;
+  text-align: center;
+  .friend-content{
+    font-size: 25px;
+
+  }
+}

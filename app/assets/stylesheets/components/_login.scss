@@ -1,0 +1,30 @@
+.container-login{
+  margin:0 auto;
+  width: 400px;
+  height: 500px;
+}
+.logo-login{
+  width: 200px;
+  height:200px;
+  display: block;
+  margin:30px auto;
+}
+.input-login{
+  color: white;
+}
+.login-btn{
+  background-color: #00082c;
+  color: white;
+  padding: 8px 30px;
+  border-radius: 5px;
+  border:1px solid white;
+  display:block;
+  margin:0 auto;
+  &:hover{
+    background-color: white;
+    color: #00082c;
+  }
+}
+.form-control{
+  width: 100%;
+}

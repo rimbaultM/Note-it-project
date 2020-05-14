@@ -1,20 +1,69 @@
 .avatar {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit:cover;
+}
+.avatar-list{
+  width: 50px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit:cover;
 }
 .avatar-large {
-  width: 56px;
+  width: 66px;
   border-radius: 50%;
+  object-fit:cover;
 }
 .avatar-bordered {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  object-fit:cover;
+
 }
 .avatar-square {
-  width: 40px;
+  width: 50px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  object-fit:cover;
+}
+.avatar-note{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit:cover;
+}
+.avatar-note-waiting{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid red;
+  object-fit:cover;
+}
+.avatar-note-chef{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit:cover;
+}
+.explain-waiting{
+  padding: 3px 3px 0 3px;
+  p{
+    color: white;
+  }
+  display:none;
+}
+.fa-crown{
+  color: gold;
+  position: relative;
+  top: -20px;
+  right: -31px;
+}
+.member-position{
+  text-align: left;
 }

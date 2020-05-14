@@ -1,0 +1,29 @@
+<div class="navbar">
+  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
+  <div class="title">
+    <h1>Note'it</h1>
+  </div>
+  <div class="avatar-group">
+   <div class="invitation">
+      <h4>Note'Invitations</h4>
+    </div>
+    <div class="avatar-deco">
+      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="note-group">
+    <div class="note-group-add">
+      <h2>Vous venez d'envoyer un demande à <%= @user.name %></h2>
+      <p>Une notification lui sera envoyé pour intégrer le groupe : <strong><%= @notegroup.title %></strong></p>
+      <%= link_to "retour à l'acceuil", notegroups_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+

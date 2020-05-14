@@ -1,0 +1,132 @@
+<div class="navbar">
+  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
+  <div class="title">
+    <h1>Note'it</h1>
+  </div>
+  <div class="avatar-group">
+   <div class="invitation">
+    <% @members.where(user: current_user.id).each do |member| %>
+      <% if member[:status] == "waiting" %>
+        <i class="fas fa-plus-circle notif"></i>
+      <% end %>
+    <% end %>
+      <h4>Note'Invitations</h4>
+    <div class="invitation-block">
+    <% @members.where(user: current_user.id).each do |member| %>
+        <% if member[:status] == "waiting" %>
+          <div class="invitation-block-update">
+            <h1 class="status">Nouvelle demande pour <%= member.notegroup.title %> </h1>
+              <%= link_to "Accepter", notegroup_member_accept_path(member.notegroup, member), method: :patch, class:"btn btn-success accept" %>
+              <%= link_to "Décliner", notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment décliner cette invitation ?' }, class:"btn btn-danger decline" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+    <div class="avatar-deco">
+      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } if current_user.photo.attached? %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="add-notegroup">
+  <h4>Créer un Note'Group</h4>
+  <%= link_to new_notegroup_path do %>
+    <i class="fas fa-plus-square"></i>
+  <% end %>
+</div>
+
+<div class="container index">
+  <div class="row justify-content-center">
+    <% @notegroups.each do |notegroup| %>
+      <% notegroup.members.each do |member| %>
+        <% if current_user == member.user && member.status == "accept"%>
+          <div class="col-12 col-lg-6">
+            <div class="note-card-blank">
+              <div class="note-card-blank-fond">
+                <div class="notes-title">
+                  <div class="notes-header">
+                    <% if current_user == notegroup.user %>
+                        <%= link_to notegroup_path(notegroup), method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer ce groupe ?' }, class: "del-group" do%>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end %>
+                      <% end %>
+                    <h2><%= notegroup.title%></h2>
+                    <div class="note-member-add">
+                      <%= link_to notegroup_members_path(notegroup, @members) do %>
+                          <i class="fas fa-user-plus"></i>
+                        <% end %>
+                      <%= link_to new_notegroup_note_path(notegroup), class: "add-note" do%>
+                        <i class="fas fa-plus-circle"></i>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <div class="member-position">
+                    <% notegroup.members.each do |member| %>
+                      <% if notegroup.user == member.user %>
+                        <i class="fas fa-crown"></i>
+                        <%= cl_image_tag member.user.photo.key, class: 'avatar-note-chef' %>
+                      <% else %>
+                        <% if member.status == "waiting"%>
+                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note-waiting' %>
+                          <div class="explain-waiting">
+                            <p>En attente de validation par <%= member.user.name %> </p>
+                          </div>
+                        <% else %>
+                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note' %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <% notegroup.notes.each do |note| %>
+                  <div class="my-note">
+                    <div class="my-note-space">
+                      <h3 class="note-title"> <%= note.title%> </h3>
+                      <!-- <p class="note-date"> <%= note.date%> jours </p> -->
+                      <% @time = (note.date - Date.today).to_i %>
+                      <% if current_user == note.user %>
+                      <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Are you sure?' } do%>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end %>
+                      <% end %>
+                    </div>
+
+                    <div class="my-note-space-2">
+                      <p class="note-content"> <%= note.content%> </p>
+
+
+
+                    </div>
+
+                    <div class="my-note-space-3">
+                      <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
+                      <div class="date-done">
+                        <% if note.done == false %>
+                          <!-- <i class="fas fa-times note-done-false"></i> -->
+                        <% else %>
+                          <!-- <i class="far fa-check-circle note-done-true"></i> -->
+                        <% end %>
+                        <% if @time >= 30 %>
+                         <p class="note-date-green"> il reste <%= (note.date - Date.today).to_i %> jours </p>
+                        <% else %>
+                          <p class="note-date-red"> il reste <%= (note.date - Date.today).to_i %> jours </p>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="border"></div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
