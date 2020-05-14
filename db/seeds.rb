@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+puts "Cleaning database..."
+puts "Cleaning users..."
+User.destroy_all
+puts "Cleaning members..."
+Member.destroy_all
+puts "Cleaning notegroups..."
+Notegroup.destroy_all
+puts "Cleaning notes..."
+Note.destroy_all
+
+puts "Creating Users...naeul"
+naeul = User.new(email: "naheull@gmail.com", password: "azerty", name: "mathieu")
+naeul.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul.save!
+puts "Creating Users...ophe"
+ophe = User.new(email: "ophelie@gmail.com", password: "azerty",name: "ophelie")
+ophe.photo.attach(io:File.open('db/fixtures/users/ophelie.jpg'), filename: 'ophelie.jpg', content_type: 'image/jpg')
+ophe.save!
