@@ -1,6 +1,6 @@
 <div class="homebackground">
   <div class="container-login">
-    <img class="logo-login" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607462/Note%20iT/shadow_lhxsud.png" alt="">
+    <img class="logo-login" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs input-login">
         <%#= f.input :name,
@@ -15,10 +15,11 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in",class: "login-btn" %>
+        <%= f.button :submit, "Se connecter",class: "login-btn" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
+    <div class="login-center">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

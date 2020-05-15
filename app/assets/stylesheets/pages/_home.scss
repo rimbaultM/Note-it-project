@@ -6,14 +6,11 @@
   height: 100vh;
   border: 1px solid black;
 }
-.home_logo{
-  width: 300px;
+.logo-home{
+  width: 200px;
   display: block;
-  margin: 200px auto 50px auto;
-  img{
-    width: 300px;
-  }
-  &:hover{
+  margin: 15vh auto 4vh auto;
+   &:hover{
     opacity: 0.5;
   }
 }
@@ -25,12 +22,12 @@
     -moz-transform:rotate(720deg);
 }
 .title-home{
-  text-align: center;
-  margin-right: 50px;
+  margin-right: 3vw;
   h1{
-    font-size: 120px;
+    font-size: 50px;
     color: white;
     font-family: 'Damion', cursive;
+    text-align: center;
   }
 
 }

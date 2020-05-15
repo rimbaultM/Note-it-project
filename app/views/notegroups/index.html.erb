@@ -1,8 +1,6 @@
 <div class="navbar">
   <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
-  <div class="title">
-    <h1>Note'it</h1>
-  </div>
+
   <div class="avatar-group">
    <div class="invitation">
     <% @members.where(user: current_user.id).each do |member| %>
@@ -44,7 +42,7 @@
     <% @notegroups.each do |notegroup| %>
       <% notegroup.members.each do |member| %>
         <% if current_user == member.user && member.status == "accept"%>
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-4">
             <div class="note-card-blank">
               <div class="note-card-blank-fond">
                 <div class="notes-title">

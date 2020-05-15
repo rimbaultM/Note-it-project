@@ -1,11 +1,11 @@
 .container-login{
   margin:0 auto;
-  width: 400px;
+  width: 350px;
   height: 500px;
 }
 .logo-login{
-  width: 200px;
-  height:200px;
+  width: 130px;
+  height:130px;
   display: block;
   margin:30px auto;
 }
@@ -25,6 +25,7 @@
     color: #00082c;
   }
 }
-.form-control{
-  width: 100%;
+.login-center{
+  text-align:center;
+  margin-top: 20px;
 }
