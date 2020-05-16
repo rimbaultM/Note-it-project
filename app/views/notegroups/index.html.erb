@@ -2,36 +2,48 @@
   <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
 
   <div class="avatar-group">
-   <div class="invitation">
-    <% @members.where(user: current_user.id).each do |member| %>
-      <% if member[:status] == "waiting" %>
-        <i class="fas fa-plus-circle notif"></i>
-      <% end %>
-    <% end %>
-      <h4>Note'Invitations</h4>
-    <div class="invitation-block">
-    <% @members.where(user: current_user.id).each do |member| %>
+    <div class="avatar-deco">
+      <% @members.where(user: current_user.id).each do |member| %>
         <% if member[:status] == "waiting" %>
-          <div class="invitation-block-update">
-            <h1 class="status">Nouvelle demande pour <%= member.notegroup.title %> </h1>
-              <%= link_to "Accepter", notegroup_member_accept_path(member.notegroup, member), method: :patch, class:"btn btn-success accept" %>
-              <%= link_to "Décliner", notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment décliner cette invitation ?' }, class:"btn btn-danger decline" %>
-          </div>
+          <i class="fas fa-plus-circle notif"></i>
         <% end %>
       <% end %>
-    </div>
-    </div>
-    <div class="avatar-deco">
       <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } if current_user.photo.attached? %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
+        <div class="dropdown-menu dropdown-menu-right deco" aria-labelledby="navbarDropdown">
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item deco"%>
+          <% @members.where(user: current_user.id).each do |member| %>
+            <% if member[:status] == "waiting" %>
+              <!-- <i class="fas fa-plus-circle notif"></i> -->
+              <div class="invitation">
+                <h4>Note'Invitations</h4>
+              </div>
+              <i class="fas fa-plus-circle notif-2"></i>
+            <% end %>
+          <% end %>
         </div>
     </div>
   </div>
 </div>
 
+<div class="invitation-block">
+  <% @members.where(user: current_user.id).each do |member| %>
+    <% if member[:status] == "waiting" %>
+      <div class="invitation-block-update">
+        <h2 class="status">Nouvelle demande pour <strong><%= member.notegroup.title %></strong> </h2>
+        <h2 class="status">vous êtes invité par : <strong><%= member.notegroup.user.name %></strong> </h2>
+          <%= link_to notegroup_member_accept_path(member.notegroup, member), method: :patch do %>
+            <i class="far fa-check-circle accept"></i>
+          <% end %>
+          <%= link_to notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment décliner cette invitation ?' } do %>
+            <i class="far fa-times-circle decline"></i>
+          <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="add-notegroup">
-  <h4>Créer un Note'Group</h4>
+  <!-- <h4>Créer un Note'Group</h4> -->
   <%= link_to new_notegroup_path do %>
     <i class="fas fa-plus-square"></i>
   <% end %>

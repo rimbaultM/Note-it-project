@@ -29,7 +29,6 @@
       padding: 1px 2px 0 2px;
     }
   }
-
 }
 
 .notes-title{
@@ -144,10 +143,26 @@
   text-align: center;
   .friend-content{
     font-size: 25px;
-
   }
 }
 .dropdown-note{
   width: 400px;
 }
+.note-group-item{
+  display:none;
+}
+.back-home{
+  color: #00082c;
+  display:block;
+  text-align: center;
+  margin-top: 250px;
+  font-size: 50px;
+}
+.back-home-note{
+  color: #00082c;
+  display:block;
+  text-align: center;
+  margin-top: 120px;
+  font-size: 50px;
 
+}
