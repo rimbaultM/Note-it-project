@@ -17,7 +17,7 @@
 <div class="container">
   <div class="note-group">
     <div class="note-group-add">
-      <h2>Vous venez d'envoyer un demande à <%= @user.name %></h2>
+      <h2>Vous venez d'envoyer un demande à <%= @user.name.capitalize %></h2>
       <p>Une notification lui sera envoyé pour intégrer le groupe : <strong><%= @notegroup.title %></strong></p>
       <%= link_to "retour à l'acceuil", notegroups_path, class: 'btn btn-primary' %>
     </div>

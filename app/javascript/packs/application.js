@@ -7,6 +7,8 @@ import {animateHome} from "../components/animate_home";
 import {addfriend} from "../components/friend";
 import {invitation} from "../components/invitation";
 import {waiting} from "../components/waiting";
+import {dropdownnote} from "../components/dropdown_note";
+
 
 waiting();
 
@@ -14,4 +16,4 @@ waiting();
 addfriend();
 animateHome();
 invitation();
-
+dropdownnote();
