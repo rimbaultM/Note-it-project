@@ -78,6 +78,9 @@ body {font-family: Verdana, sans-serif;}
 /* Highlight the "current" day */
 .days li .active {
   padding: 5px;
-  background: #1abc9c;
+  background-image: linear-gradient(to right bottom, #65465a, #4d3542, #35252c, #1e1619, #000000);
   color: white !important
+}
+.date{
+  padding-top: 150px;
 }

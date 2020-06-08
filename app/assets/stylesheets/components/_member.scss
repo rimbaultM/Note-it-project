@@ -62,7 +62,12 @@
 }
 .add-friend-order{
   display: flex;
-  justify-content: center;
+
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex-shrink: 0;
+
+
 }
 .add-friend-member{
   margin: 10px;

@@ -47,12 +47,16 @@
   <% end %>
 </div>
 
+
+<% mois = ["janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"] %>
+
+
 <div class="calendar">
    <div class="month">
     <ul>
       <li class="prev">&#10094;</li>
       <li class="next">&#10095;</li>
-      <li>Juin<br><span style="font-size:18px">2020</span></li>
+      <li><%= mois[(Date.today.month)-1] %><br><span style="font-size:18px"><%= Date.today.year %></span></li>
     </ul>
   </div>
 
@@ -67,36 +71,36 @@
   </ul>
 
   <ul class="days">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li><span class="active">10</span></li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
+    <% if Date.today.day == 1 %> <li><span class="active">1</span></li> <% else %> <li>1</li> <%end %>
+    <% if Date.today.day == 2 %> <li><span class="active">2</span></li> <% else %> <li>2</li> <%end %>
+    <% if Date.today.day == 3 %> <li><span class="active">3</span></li> <% else %> <li>3</li> <%end %>
+    <% if Date.today.day == 4 %> <li><span class="active">4</span></li> <% else %> <li>4</li> <%end %>
+    <% if Date.today.day == 5 %> <li><span class="active">5</span></li> <% else %> <li>5</li> <%end %>
+    <% if Date.today.day == 6 %> <li><span class="active">6</span></li> <% else %> <li>6</li> <%end %>
+    <% if Date.today.day == 7 %> <li><span class="active">7</span></li> <% else %> <li>7</li> <%end %>
+    <% if Date.today.day == 8 %> <li><span class="active">8</span></li> <% else %> <li>8</li> <%end %>
+    <% if Date.today.day == 9 %> <li><span class="active">9</span></li> <% else %> <li>9</li> <%end %>
+    <% if Date.today.day == 10 %> <li><span class="active">10</span></li> <% else %> <li>10</li> <%end %>
+    <% if Date.today.day == 11 %> <li><span class="active">11</span></li> <% else %> <li>11</li> <%end %>
+    <% if Date.today.day == 12 %> <li><span class="active">12</span></li> <% else %> <li>12</li> <%end %>
+    <% if Date.today.day == 13 %> <li><span class="active">13</span></li> <% else %> <li>13</li> <%end %>
+    <% if Date.today.day == 14 %> <li><span class="active">14</span></li> <% else %> <li>14</li> <%end %>
+    <% if Date.today.day == 15 %> <li><span class="active">15</span></li> <% else %> <li>15</li> <%end %>
+    <% if Date.today.day == 16 %> <li><span class="active">16</span></li> <% else %> <li>16</li> <%end %>
+    <% if Date.today.day == 17 %> <li><span class="active">17</span></li> <% else %> <li>17</li> <%end %>
+    <% if Date.today.day == 18 %> <li><span class="active">18</span></li> <% else %> <li>18</li> <%end %>
+    <% if Date.today.day == 19 %> <li><span class="active">19</span></li> <% else %> <li>19</li> <%end %>
+    <% if Date.today.day == 20 %> <li><span class="active">20</span></li> <% else %> <li>20</li> <%end %>
+    <% if Date.today.day == 21 %> <li><span class="active">21</span></li> <% else %> <li>21</li> <%end %>
+    <% if Date.today.day == 22 %> <li><span class="active">22</span></li> <% else %> <li>22</li> <%end %>
+    <% if Date.today.day == 23 %> <li><span class="active">23</span></li> <% else %> <li>23</li> <%end %>
+    <% if Date.today.day == 24 %> <li><span class="active">24</span></li> <% else %> <li>24</li> <%end %>
+    <% if Date.today.day == 25 %> <li><span class="active">25</span></li> <% else %> <li>25</li> <%end %>
+    <% if Date.today.day == 26 %> <li><span class="active">26</span></li> <% else %> <li>26</li> <%end %>
+    <% if Date.today.day == 27 %> <li><span class="active">27</span></li> <% else %> <li>27</li> <%end %>
+    <% if Date.today.day == 28 %> <li><span class="active">28</span></li> <% else %> <li>2</li> <%end %>
+    <% if Date.today.day == 29 %> <li><span class="active">2</span></li> <% else %> <li>2</li> <%end %>
+    <% if Date.today.day == 30 %> <li><span class="active">30</span></li> <% else %> <li>30</li> <%end %>
   </ul>
   </div>
 
