@@ -6,6 +6,5 @@ class CreateNotegroups < ActiveRecord::Migration[6.0]
     end
 
     add_reference :notegroups, :user, foreign_key: true
-    add_column :notegroups, :color, :string, default: "bleu"
   end
 end
