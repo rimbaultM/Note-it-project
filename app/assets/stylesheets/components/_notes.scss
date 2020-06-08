@@ -3,12 +3,14 @@
 }
 .note-card-blank{
   margin: 0 10px 10px 10px;
+  position: relative;
+  z-index:0;
 }
 .note-card-blank-fond{
-
 }
 .add-notegroup{
-  margin: 25px 0;
+
+  padding: 70px 0 25px 0 ;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -18,7 +20,8 @@
   }
   i{
     font-size:35px;
-    color: #00103c;
+    color: #362f3a;
+
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.12);
     &:hover{
       color: white;
@@ -68,8 +71,7 @@
   }
 
 .notes-title-blue{
-  background: rgb(1,1,56);
-  background: linear-gradient(0deg, rgba(1,1,56,1) 0%, rgba(5,5,133,1) 100%);
+  background-image: linear-gradient(to right bottom, #65465a, #754c61, #865366, #965a6a, #a6616c);
   position: relative;
   border-top-right-radius: 8px;
   border-top-left-radius:8px;
@@ -78,11 +80,9 @@
   text-align: center;
   padding-bottom: 5px;
   width: 100%;
-
 }
 .notes-title-red{
-  background: rgb(101,0,1);
-  background: linear-gradient(0deg, rgba(101,0,1,1) 0%, rgba(235,9,9,1) 100%);
+  background-image: linear-gradient(to right bottom, #fcb965, #ffc865, #ffd866, #fde86a, #f9f871);
   position: relative;
   border-top-right-radius: 8px;
   border-top-left-radius:8px;
@@ -93,8 +93,7 @@
   width: 100%;
 }
 .notes-title-green{
-  background: rgb(1,56,9);
-  background: linear-gradient(0deg, rgba(1,56,9,1) 0%, rgba(9,133,5,1) 100%);
+  background-image: linear-gradient(to bottom, #78aeb2, #7fb7b7, #86c0bc, #8ec9c1, #97d2c5);
   position: relative;
   border-top-right-radius: 8px;
   border-top-left-radius:8px;
@@ -106,14 +105,15 @@
 }
 .my-note{
   padding-bottom: 8px;
-  .border{
+}
+.bordernote{
+  padding-bottom: 15px;
     display:block;
     margin: 0 auto;
-    border-bottom: 2px solid rgb(150,150,150);
-    width: 70%;
+    border-bottom: 1px solid rgb(150,150,150);
+    width: 95%;
 
   }
-}
   .my-note-space{
     display:flex;
     justify-content: space-between;
@@ -136,6 +136,7 @@
   align-items: center;
   margin: 2px 10px 5px 10px;
   .date-done{
+    font-size: 12px;
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -157,8 +158,6 @@
     }
   }
 }
-
-
 .friend{
   background-color: white;
   opacity: 0.95;
@@ -184,6 +183,9 @@
   border-bottom-left-radius: 8px;
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.12);
   background-color: rgba(240,240,240,0.8);
+    position: relative;
+  top: -10px;
+  z-index:-2;
 
 }
 .back-home{
@@ -199,9 +201,19 @@
   text-align: center;
   margin-top: 120px;
   font-size: 50px;
-
+}
+.back-home-member{
+  color: #00082c;
+  display:block;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 50px;
 }
 .noteless{
   padding: 10px 0;
   text-align:center;
+
+}
+.poubellenote{
+  color: white;
 }

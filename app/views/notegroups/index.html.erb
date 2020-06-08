@@ -7,21 +7,25 @@
           <i class="fas fa-plus-circle notif"></i>
         <% end %>
       <% end %>
-      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } if current_user.photo.attached? %>
-        <div class="dropdown-menu dropdown-menu-right deco" aria-labelledby="navbarDropdown">
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item deco"%>
-          <% @members.where(user: current_user.id).each do |member| %>
-            <% if member[:status] == "waiting" %>
-              <!-- <i class="fas fa-plus-circle notif"></i> -->
-              <div class="invitation">
-                <h4>Note'Invitations</h4>
-              </div>
-              <i class="fas fa-plus-circle notif-2"></i>
-            <% end %>
-          <% end %>
-        </div>
+      <%= cl_image_tag current_user.photo.key, class: "avatar avatarmenu" if current_user.photo.attached? %>
     </div>
   </div>
+</div>
+
+<div class="fondcolor"> </div>
+
+<div class="dropdown-block">
+  <% @members.where(user: current_user.id).each do |member| %>
+    <% if member[:status] == "waiting" %>
+      <!-- <i class="fas fa-plus-circle notif"></i> -->
+      <div class="invitation">
+        <h4>Note'Invitations</h4>
+      </div>
+      <i class="fas fa-plus-circle notif-2"></i>
+    <% end %>
+  <% end %>
+  <h4><%= link_to "Mon profil", destroy_user_session_path, method: :delete, class: "dropdown-item deco"%></h4>
+  <h4><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item deco"%></h4>
 </div>
 
 <div class="invitation-block">
@@ -30,12 +34,14 @@
       <div class="invitation-block-update">
         <h2 class="status">Nouvelle demande pour <strong><%= member.notegroup.title %></strong> </h2>
         <h2 class="status">vous êtes invité par : <strong><%= member.notegroup.user.name %></strong> </h2>
+        <div class="status-logo">
           <%= link_to notegroup_member_accept_path(member.notegroup, member), method: :patch do %>
             <i class="far fa-check-circle accept"></i>
           <% end %>
           <%= link_to notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment décliner cette invitation ?' } do %>
             <i class="far fa-times-circle decline"></i>
           <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -93,7 +99,6 @@
     <li>30</li>
   </ul>
   </div>
-     <%= link_to @event.title, :controller => 'meeting', :action => :to_icalender, :format => :ics %>
 
 <div class="add-notegroup">
   <!-- <h4>Créer un Note'Group</h4> -->
@@ -113,11 +118,11 @@
 
 
               <div class="note-card-blank-fond">
-                <% if notegroup.color == 'Bleu' %>
+                <% if notegroup.color == 'thème1' %>
                   <div class="notes-title-blue notes-title<%= index %>">
-                <% elsif notegroup.color == 'Rouge' %>
+                <% elsif notegroup.color == 'thème2' %>
                   <div class="notes-title-red notes-title<%= index %>">
-                <% elsif notegroup.color == 'Vert' %>
+                <% elsif notegroup.color == 'thème3' %>
                   <div class="notes-title-green notes-title<%= index %>">
                 <% end %>
                     <div class="notes-header">
@@ -175,7 +180,7 @@
                       <% @time = (note.date - Date.today).to_i %>
                       <% if current_user == note.user %>
                       <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                          <i class="fas fa-trash-alt"></i>
+                          <i class="fas fa-trash-alt poubellenote"></i>
                         <% end %>
                       <% end %>
                     </div>
@@ -199,7 +204,7 @@
                         <% end %>
                       </div>
                     </div>
-                    <div class="border"></div>
+                    <div class="bordernote"></div>
 
                 <% end %>
                 <% end %>

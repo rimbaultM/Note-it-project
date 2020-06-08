@@ -1,14 +1,4 @@
-<div class="navbar">
-  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
-  <div class="avatar-group">
-    <div class="avatar-deco">
-      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
-        </div>
-    </div>
-  </div>
-</div>
+<div class="fondcolor"> </div>
 
 
 <div class="container">
@@ -31,28 +21,31 @@
         <% end %>
       <% end %>
       <div class="member-add">
-        <h2>Ajouter un Note'Membre</h2>
+        <h2>Liste de tous les membres</h2>
+         <div class="add-friend-order">
+          <% @users.each do |user| %>
+            <% if @notegroup.user != user %>
+              <%= link_to user_notegroup_path(user, @notegroup),class: "add-friend-link" do  %>
+                <div class="add-friend-member">
+                 <%=cl_image_tag user.photo.key, class: 'avatar-list' %>
+                 <p class="friend-name"><%= user.name %></p>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
         <%= form_tag notegroup_members_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: "rechercher un membre"
+            class: "form-control search-bar-member",
+            placeholder: "filtre par nom"
           %>
-          <%= submit_tag "rechercher", class: "btn btn-primary" %>
+          <%= submit_tag "rechercher", class: "btn btn-primary membresearch" %>
         <% end %>
 
-      <div class="add-friend-order">
-        <% @users.each do |user| %>
-          <% if @notegroup.user != user %>
-            <%= link_to user_notegroup_path(user, @notegroup),class: "add-friend-link" do  %>
-              <div class="add-friend-member">
-               <%=cl_image_tag user.photo.key, class: 'avatar-list' %>
-               <p class="friend-name"><%= user.name %></p>
-              </div>
-            <% end %>
-          <% end %>
+        <%= link_to notegroups_path do %>
+          <i class="fas fa-home back-home-member"></i>
         <% end %>
-      </div>
 
       </div>
     </div>

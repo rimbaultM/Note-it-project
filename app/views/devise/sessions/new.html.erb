@@ -1,4 +1,4 @@
-<div class="homebackground">
+<div class="fondcolor">
   <div class="container-login">
     <img class="logo-login" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Se connecter",class: "login-btn" %>
+        <%= f.button :submit, "Se connecter",class: "login-btn membresearch" %>
       </div>
     <% end %>
     <div class="login-center">

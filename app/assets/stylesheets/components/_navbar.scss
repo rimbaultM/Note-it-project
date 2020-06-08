@@ -1,5 +1,9 @@
 .navbar {
-    background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+    // background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+     background-image: linear-gradient(to right bottom, #65465a, #4d3542, #35252c, #1e1619, #000000);
+    box-shadow:0px 0px 8px 0px #191a1a inset;
+    position: fixed;
+    width: 100vw;
   h1{
     font-size: 40px;
     color: white;
@@ -14,20 +18,6 @@
   width: 50px;
   height:50px;
 }
-.invitation{
-  color: black;
-  cursor: pointer;
-  position: relative;
-  h4{
-    font-family: 'Damion', cursive;
-    margin: 0.3rem 0.5rem;
-  }
-  margin: 0 15px;
-  display:flex;
-  align-items: center;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
 .invitation-block{
   width: 300px;
   padding-bottom: 10px;
@@ -36,7 +26,7 @@
   border-bottom-left-radius: 10px;
   display:none;
   position: absolute;
-  top: 67px;
+  top: 56px;
   right:5px;
   z-index: 1;
   h2{
@@ -50,28 +40,17 @@
   margin: 10px auto 0 auto;
   text-align: center;
 }
+.status-logo{
+  display:flex;
+  justify-content: space-around;
+
+}
 .avatar-group{
   display:flex;
   justify-content: space-between;
 }
 .title{
   margin-left: 150px;
-}
-
-.notif{
-  color: red;
-  position: relative;
-  right: -13px;
-  top: -13px;
-}
-.notif-2{
-  color: red;
-  position: relative;
-  left: -75px;
-  top: -46px;
-}
-.deco{
-  text-align: center;
 }
 .decline{
   font-size: 25px;
@@ -80,4 +59,12 @@
 .accept{
   font-size: 25px;
   color: green;
+  position: fixed;
+  z-index: 100;
+}
+.notif{
+  color: red;
+  position: relative;
+  right: -13px;
+  top: -13px;
 }
