@@ -8,7 +8,7 @@ import {addfriend} from "../components/friend";
 import {invitation} from "../components/invitation";
 import {waiting} from "../components/waiting";
 import {dropdownnote} from "../components/dropdown_note";
-
+import {calendar} from "../components/calendrier";
 
 waiting();
 
@@ -17,3 +17,4 @@ addfriend();
 animateHome();
 invitation();
 dropdownnote();
+calendar();

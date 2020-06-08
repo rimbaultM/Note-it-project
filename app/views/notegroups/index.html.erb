@@ -1,6 +1,5 @@
 <div class="navbar">
-  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
-
+  <i class="fas fa-calendar-alt calendar-nav"></i>
   <div class="avatar-group">
     <div class="avatar-deco">
       <% @members.where(user: current_user.id).each do |member| %>
@@ -42,12 +41,67 @@
   <% end %>
 </div>
 
+<div class="calendar">
+   <div class="month">
+    <ul>
+      <li class="prev">&#10094;</li>
+      <li class="next">&#10095;</li>
+      <li>Juin<br><span style="font-size:18px">2020</span></li>
+    </ul>
+  </div>
+
+  <ul class="weekdays">
+    <li>Lu</li>
+    <li>Ma</li>
+    <li>Ma</li>
+    <li>Je</li>
+    <li>Ve</li>
+    <li>Sa</li>
+    <li>Di</li>
+  </ul>
+
+  <ul class="days">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li><span class="active">10</span></li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+    <li>19</li>
+    <li>20</li>
+    <li>21</li>
+    <li>22</li>
+    <li>23</li>
+    <li>24</li>
+    <li>25</li>
+    <li>26</li>
+    <li>27</li>
+    <li>28</li>
+    <li>29</li>
+    <li>30</li>
+  </ul>
+  </div>
+     <%= link_to @event.title, :controller => 'meeting', :action => :to_icalender, :format => :ics %>
+
 <div class="add-notegroup">
   <!-- <h4>Créer un Note'Group</h4> -->
   <%= link_to new_notegroup_path do %>
     <i class="fas fa-plus-square"></i>
   <% end %>
 </div>
+
 
 <div class="container index">
   <div class="row justify-content-center">
@@ -59,76 +113,95 @@
 
 
               <div class="note-card-blank-fond">
-                <div class="notes-title notes-title<%= index %>">
-                  <div class="notes-header">
-                    <% if current_user == notegroup.user %>
+                <% if notegroup.color == 'Bleu' %>
+                  <div class="notes-title-blue notes-title<%= index %>">
+                <% elsif notegroup.color == 'Rouge' %>
+                  <div class="notes-title-red notes-title<%= index %>">
+                <% elsif notegroup.color == 'Vert' %>
+                  <div class="notes-title-green notes-title<%= index %>">
+                <% end %>
+                    <div class="notes-header">
+                      <% if current_user == notegroup.user %>
                         <%= link_to notegroup_path(notegroup), method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer ce groupe ?' }, class: "del-group" do%>
                           <i class="fas fa-trash-alt"></i>
                         <% end %>
-                      <% end %>
-                    <h2><%= notegroup.title.capitalize%></h2>
-                    <div class="note-member-add">
-                      <%= link_to notegroup_members_path(notegroup, @members) do %>
-                          <i class="fas fa-user-plus"></i>
+                      <% else %>
+                        <%= link_to notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment quitter ce notegroup ?' } do %>
+                          <i class="fas fa-ban"></i>
                         <% end %>
-                      <%= link_to new_notegroup_note_path(notegroup), class: "add-note" do%>
-                        <i class="fas fa-plus-circle"></i>
+                      <% end %>
+                      <h2><%= notegroup.title.capitalize%></h2>
+                      <div class="note-member-add">
+                        <%= link_to notegroup_members_path(notegroup, @members) do %>
+                            <i class="fas fa-user-plus"></i>
+                          <% end %>
+                        <%= link_to new_notegroup_note_path(notegroup), class: "add-note" do%>
+                          <i class="fas fa-plus-circle"></i>
+                        <% end %>
+                      </div>
+                    </div>
+
+                    <div class="member-position">
+                      <% notegroup.members.each do |member| %>
+                        <% if notegroup.user == member.user %>
+                          <i class="fas fa-crown"></i>
+                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note-chef' %>
+                        <% else %>
+                          <% if member.status == "waiting"%>
+                            <%= cl_image_tag member.user.photo.key, class: 'avatar-note-waiting' %>
+                            <div class="explain-waiting">
+                              <p>En attente de validation par <%= member.user.name %> </p>
+                            </div>
+                          <% else %>
+                            <%= cl_image_tag member.user.photo.key, class: 'avatar-note' %>
+                          <% end %>
+                        <% end %>
                       <% end %>
                     </div>
+                    <div class="flechedown flechedown<%= index %>"><i class="arrow down"></i></div>
+                    <div class="flecheup flecheup<%= index %>"><i class="arrow up"></i></div>
                   </div>
-
-                  <div class="member-position">
-                    <% notegroup.members.each do |member| %>
-                      <% if notegroup.user == member.user %>
-                        <i class="fas fa-crown"></i>
-                        <%= cl_image_tag member.user.photo.key, class: 'avatar-note-chef' %>
-                      <% else %>
-                        <% if member.status == "waiting"%>
-                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note-waiting' %>
-                          <div class="explain-waiting">
-                            <p>En attente de validation par <%= member.user.name %> </p>
-                          </div>
-                        <% else %>
-                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note' %>
-                        <% end %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
 
 
 
               <div class="note-group-item note-group-item<%= index %>">
+                <% if notegroup.notes.count <=0 %>
+                    <p class="noteless">aucune note</p>
+                <% else %>
                 <% notegroup.notes.each do |note| %>
-                  <div class="my-note-space">
-                    <h3 class="note-title"> <%= note.title%> </h3>
-                    <!-- <p class="note-date"> <%= note.date%> jours </p> -->
-                    <% @time = (note.date - Date.today).to_i %>
-                    <% if current_user == note.user %>
-                    <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                        <i class="fas fa-trash-alt"></i>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div class="my-note-space-2">
-                    <p class="note-content"> <%= note.content%> </p>
-                  </div>
-                  <div class="my-note-space-3">
-                    <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
-                    <div class="date-done">
-                      <% if note.done == false %>
-                        <!-- <i class="fas fa-times note-done-false"></i> -->
-                      <% else %>
-                        <!-- <i class="far fa-check-circle note-done-true"></i> -->
-                      <% end %>
-                      <% if @time >= 30 %>
-                       <p class="note-date-green"> il reste <%= (note.date - Date.today).to_i %> jours </p>
-                      <% else %>
-                        <p class="note-date-red"> il reste <%= (note.date - Date.today).to_i %> jours </p>
+                    <div class="my-note-space">
+                      <h3 class="note-title"> <%= note.title%> </h3>
+                      <!-- <p class="note-date"> <%= note.date%> jours </p> -->
+                      <% @time = (note.date - Date.today).to_i %>
+                      <% if current_user == note.user %>
+                      <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Are you sure?' } do%>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end %>
                       <% end %>
                     </div>
-                  </div>
-                  <div class="border"></div>
+                    <div class="my-note-space-2">
+                      <p class="note-content"> <%= note.content%> </p>
+                    </div>
+                    <div class="my-note-space-3">
+                      <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
+                      <div class="date-done">
+                        <% if note.done == false %>
+                          <!-- <i class="fas fa-times note-done-false"></i> -->
+                        <% else %>
+                          <!-- <i class="far fa-check-circle note-done-true"></i> -->
+                        <% end %>
+                        <% if @time >= 1 %>
+                         <p class="note-date-green"> il reste <%= (note.date - Date.today).to_i %> jours </p>
+                        <% elsif @time == 0 %>
+                          <p class="note-date-red"> Expire aujourd'hui </p>
+                        <% else %>
+                          <p class="note-date-red"> A expiré depuis <%= (Date.today - note.date).to_i %> <% if @time == -1  %> jour <% else %> jours <% end %></p>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="border"></div>
+
+                <% end %>
                 <% end %>
                 </div>
 

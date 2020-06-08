@@ -1,0 +1,38 @@
+.blueround{
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  background: rgb(1,1,56);
+  background: linear-gradient(0deg, rgba(1,1,56,1) 0%, rgba(5,5,133,1) 100%);
+  color: white;
+}
+.redround{
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  background: rgb(101,0,1);
+  background: linear-gradient(0deg, rgba(101,0,1,1) 0%, rgba(235,9,9,1) 100%);
+  color: white;
+}
+.greenround{
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  background: rgb(1,56,9);
+  background: linear-gradient(0deg, rgba(1,56,9,1) 0%, rgba(9,133,5,1) 100%);
+  color: white;
+}
+
+.colorselect{
+  display:flex;
+  justify-content: center;
+  p{
+    margin: 0 5px;
+  }
+}
+.notegroup_color{
+  width: 60%;
+  display:block;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}

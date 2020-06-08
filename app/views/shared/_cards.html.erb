@@ -1,0 +1,40 @@
+<div class="notes-title-red notes-title<%= index %>">
+                    <div class="notes-header">
+                      <% if current_user == notegroup.user %>
+                        <%= link_to notegroup_path(notegroup), method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer ce groupe ?' }, class: "del-group" do%>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end %>
+                      <% else %>
+                        <%= link_to notegroup_member_path(member.notegroup, member), method: :delete, data: { confirm: 'Voulez-vous vraiment quitter ce notegroup ?' } do %>
+                          <i class="fas fa-ban"></i>
+                        <% end %>
+                      <% end %>
+                      <h2><%= notegroup.title.capitalize%></h2>
+                      <div class="note-member-add">
+                        <%= link_to notegroup_members_path(notegroup, @members) do %>
+                            <i class="fas fa-user-plus"></i>
+                          <% end %>
+                        <%= link_to new_notegroup_note_path(notegroup), class: "add-note" do%>
+                          <i class="fas fa-plus-circle"></i>
+                        <% end %>
+                      </div>
+                    </div>
+
+                    <div class="member-position">
+                      <% notegroup.members.each do |member| %>
+                        <% if notegroup.user == member.user %>
+                          <i class="fas fa-crown"></i>
+                          <%= cl_image_tag member.user.photo.key, class: 'avatar-note-chef' %>
+                        <% else %>
+                          <% if member.status == "waiting"%>
+                            <%= cl_image_tag member.user.photo.key, class: 'avatar-note-waiting' %>
+                            <div class="explain-waiting">
+                              <p>En attente de validation par <%= member.user.name %> </p>
+                            </div>
+                          <% else %>
+                            <%= cl_image_tag member.user.photo.key, class: 'avatar-note' %>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>

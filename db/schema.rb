@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_122040) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "color", default: "bleu"
     t.index ["user_id"], name: "index_notegroups_on_user_id"
   end
 

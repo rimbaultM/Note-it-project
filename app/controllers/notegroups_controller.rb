@@ -51,12 +51,10 @@ class NotegroupsController < ApplicationController
   end
 
 
-
-
 private
 
   def notegroup_params
-    params.require(:notegroup).permit(:title)
+    params.require(:notegroup).permit(:title, :color)
   end
 
 end

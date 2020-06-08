@@ -2,61 +2,83 @@
 const dropdownnote = () => {
     $(".notes-title0").click(function(){
       $(".note-group-item0").toggle();
+      $(".flechedown0").toggle();
+      $(".flecheup0").toggle();
     });
     $(".notes-title1").click(function(){
       $(".note-group-item1").toggle();
+      $(".flechedown1").toggle();
+      $(".flecheup1").toggle();
     });
     $(".notes-title2").click(function(){
       $(".note-group-item2").toggle();
+      $(".flechedown2").toggle();
+      $(".flecheup2").toggle();
     });
     $(".notes-title3").click(function(){
       $(".note-group-item3").toggle();
+      $(".flechedown3").toggle();
+      $(".flecheup3").toggle();
     });
     $(".notes-title4").click(function(){
       $(".note-group-item4").toggle();
+      $(".flechedown4").toggle();
+      $(".flecheup4").toggle();
     });
     $(".notes-title5").click(function(){
       $(".note-group-item5").toggle();
+      $(".flechedown5").toggle();
+      $(".flecheup5").toggle();
     });
     $(".notes-title6").click(function(){
       $(".note-group-item6").toggle();
+      $(".flechedown6").toggle();
+      $(".flecheup6").toggle();
     });
     $(".notes-title7").click(function(){
       $(".note-group-item7").toggle();
+      $(".flechedown7").toggle();
+      $(".flecheup7").toggle();
     });
     $(".notes-title8").click(function(){
       $(".note-group-item8").toggle();
+      $(".flechedown8").toggle();
+      $(".flecheup8").toggle();
     });
     $(".notes-title9").click(function(){
       $(".note-group-item9").toggle();
+      $(".flechedown9").toggle();
+      $(".flecheup9").toggle();
     });
     $(".notes-title10").click(function(){
       $(".note-group-item10").toggle();
+      $(".flechedown10").toggle();
+      $(".flecheup10").toggle();
     });
     $(".notes-title11").click(function(){
       $(".note-group-item11").toggle();
+      $(".flechedown11").toggle();
+      $(".flecheup11").toggle();
     });
     $(".notes-title12").click(function(){
       $(".note-group-item12").toggle();
+      $(".flechedown12").toggle();
+      $(".flecheup12").toggle();
     });
     $(".notes-title13").click(function(){
       $(".note-group-item13").toggle();
+      $(".flechedown13").toggle();
+      $(".flecheup13").toggle();
     });
     $(".notes-title14").click(function(){
       $(".note-group-item14").toggle();
+      $(".flechedown14").toggle();
+      $(".flecheup14").toggle();
     });
     $(".notes-title15").click(function(){
       $(".note-group-item15").toggle();
+      $(".flechedown15").toggle();
+      $(".flecheup15").toggle();
     });
-    $(".notes-title16").click(function(){
-      $(".note-group-item16").toggle();
-    });
-    $(".notes-title17").click(function(){
-      $(".note-group-item17").toggle();
-    });
-    $(".notes-title18").click(function(){
-      $(".note-group-item18").toggle();
-    });
-
 }
  export {dropdownnote}

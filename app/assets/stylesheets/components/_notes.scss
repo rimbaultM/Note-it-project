@@ -5,8 +5,7 @@
   margin: 0 10px 10px 10px;
 }
 .note-card-blank-fond{
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
-  background-color: rgba(240,240,240,0.8);
+
 }
 .add-notegroup{
   margin: 25px 0;
@@ -18,7 +17,6 @@
     font-family: 'Damion', cursive;
   }
   i{
-    margin-left: 20px;
     font-size:35px;
     color: #00103c;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.12);
@@ -31,18 +29,14 @@
   }
 }
 
-.notes-title{
-  background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
-  position: relative;
-  border-top-right-radius: 8px;
-  border-top-left-radius:8px;
-  text-align: center;
-  padding-bottom: 5px;
-  width: 100%;
-  .notes-header{
+.notes-header{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding:0 15px;
+    i{
+      color: white;
+    }
     .del-group{
       font-size: 15px;
       color:white;
@@ -72,8 +66,44 @@
       }
     }
   }
-}
 
+.notes-title-blue{
+  background: rgb(1,1,56);
+  background: linear-gradient(0deg, rgba(1,1,56,1) 0%, rgba(5,5,133,1) 100%);
+  position: relative;
+  border-top-right-radius: 8px;
+  border-top-left-radius:8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  padding-bottom: 5px;
+  width: 100%;
+
+}
+.notes-title-red{
+  background: rgb(101,0,1);
+  background: linear-gradient(0deg, rgba(101,0,1,1) 0%, rgba(235,9,9,1) 100%);
+  position: relative;
+  border-top-right-radius: 8px;
+  border-top-left-radius:8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  padding-bottom: 5px;
+  width: 100%;
+}
+.notes-title-green{
+  background: rgb(1,56,9);
+  background: linear-gradient(0deg, rgba(1,56,9,1) 0%, rgba(9,133,5,1) 100%);
+  position: relative;
+  border-top-right-radius: 8px;
+  border-top-left-radius:8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  padding-bottom: 5px;
+  width: 100%;
+}
 .my-note{
   padding-bottom: 8px;
   .border{
@@ -150,6 +180,11 @@
 }
 .note-group-item{
   display:none;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.12);
+  background-color: rgba(240,240,240,0.8);
+
 }
 .back-home{
   color: #00082c;
@@ -165,4 +200,8 @@
   margin-top: 120px;
   font-size: 50px;
 
+}
+.noteless{
+  padding: 10px 0;
+  text-align:center;
 }

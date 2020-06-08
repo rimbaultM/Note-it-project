@@ -18,6 +18,15 @@
     <div class="container form_new">
       <%= simple_form_for @notegroup do |f| %>
         <%= f.input :title, placeholder: "Titre de votre Note'Group",  label: false  %>
+<!--
+        <div class="colorselect">
+          <p class="blueround">Bleu</p>
+          <p class="redround">Rouge</p>
+          <p class="greenround">Vert</p>
+        </div> -->
+
+        <%= f.input :color, collection: ["Bleu", "Rouge", "Vert"], label: "Choissisez un thème", class: "colorinput", required: true, selected: "Bleu"%>
+
         <%= f.submit "Créer votre Note'Group", class: "button" %>
       <% end %>
     </div>
@@ -26,3 +35,5 @@
     <i class="fas fa-home back-home"></i>
   <% end %>
 </div>
+
+
