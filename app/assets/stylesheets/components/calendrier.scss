@@ -82,7 +82,7 @@ body {font-family: Verdana, sans-serif;}
   color: white !important
 }
 .date{
-  padding-top: 150px;
+  padding-top: 5px;
 }
 .lastyear{
   display:none;
@@ -92,4 +92,24 @@ body {font-family: Verdana, sans-serif;}
 }
 .nope{
   display: none !important;
+}
+
+
+.calendarblue {
+  padding: 5px;
+  background-image: linear-gradient(to right bottom, #65465a, #754c61, #865366, #965a6a, #a6616c);
+  border-radius: 50px;
+  color: white !important
+}
+.calendarred {
+  padding: 5px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right bottom, #fcb965, #ffc865, #ffd866, #fde86a, #f9f871);
+  color: white !important
+}
+.calendargreen {
+  padding: 5px;
+  border-radius: 50px;
+  background-image: linear-gradient(to bottom, #78aeb2, #7fb7b7, #86c0bc, #8ec9c1, #97d2c5);
+  color: white !important
 }
