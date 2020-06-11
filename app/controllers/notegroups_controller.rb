@@ -5,9 +5,6 @@ class NotegroupsController < ApplicationController
     @notegroups = Notegroup.all
     @users = User.all
     @members = Member.all
-
-
-
   end
 
   def show
@@ -43,13 +40,22 @@ class NotegroupsController < ApplicationController
     @usergroup = Member.create(user:current_user, notegroup: @notegroup, status: "accept")
   end
 
-  def destroy
-     @notegroup = Notegroup.find(params[:id])
-     @user = @notegroup.user
-     @notegroup.destroy
-     redirect_to notegroups_path
+  def edit
+    @notegroup = Notegroup.find(params[:id])
   end
 
+  def update
+    @notegroup = Notegroup.find(params[:id])
+    @notegroup.update(notegroup_params)
+    redirect_to notegroups_path
+  end
+
+  def destroy
+    @notegroup = Notegroup.find(params[:id])
+    @user = @notegroup.user
+    @notegroup.destroy
+    redirect_to notegroups_path
+  end
 
 private
 

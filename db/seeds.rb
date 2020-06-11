@@ -25,3 +25,29 @@ puts "Creating Users...ophe"
 ophe = User.new(email: "ophelie@gmail.com", password: "azerty",name: "ophelie")
 ophe.photo.attach(io:File.open('db/fixtures/users/ophelie.jpg'), filename: 'ophelie.jpg', content_type: 'image/jpg')
 ophe.save!
+
+
+puts "Creating Users...naeul"
+naeul1 = User.new(email: "naheull1@gmail.com", password: "azerty", name: "mathieu1")
+naeul1.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul1.save!
+
+puts "Creating Users...naeul"
+naeul2 = User.new(email: "naheull2@gmail.com", password: "azerty", name: "mathieu2")
+naeul2.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul2.save!
+
+puts "Creating Users...naeul"
+naeul3 = User.new(email: "naheull3@gmail.com", password: "azerty", name: "mathieu3")
+naeul3.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul3.save!
+
+puts "Creating Users...naeul"
+naeul4 = User.new(email: "naheull4@gmail.com", password: "azerty", name: "mathieu4")
+naeul4.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul4.save!
+
+puts "Creating Users...naeul"
+naeul5 = User.new(email: "naheull5@gmail.com", password: "azerty", name: "mathieu5")
+naeul5.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.png', content_type: 'image/png')
+naeul5.save!

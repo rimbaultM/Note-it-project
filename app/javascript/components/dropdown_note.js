@@ -1,5 +1,10 @@
 
 const dropdownnote = () => {
+
+    $(".avatarmenu").click(function(){
+      $(".dropdown-block").toggle();
+    });
+
     $(".notes-title0").click(function(){
       $(".note-group-item0").toggle();
       $(".flechedown0").toggle();

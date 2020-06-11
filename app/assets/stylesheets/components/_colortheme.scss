@@ -1,26 +1,38 @@
+.fondcolor{
+  // background-image: linear-gradient(to right bottom, #5e6366, #4d5257, #3f4149, #333039, #282029);
+  background-image: linear-gradient(to left top, #2f2b34, #413544, #563f52, #6e495d, #865366, #9c5c6b, #b1666d, #c4726e, #d7816d, #e8916a, #f4a467, #fcb965);
+  height: 100vh;
+  width: 100vw;
+  box-shadow:0px 0px 8px 0px #191a1a inset;
+  position: fixed;
+  z-index: -3;
+}
+
 .blueround{
-  width: 60px;
+  width: 90px;
   height: 30px;
   border-radius: 10px;
-  background: rgb(1,1,56);
-  background: linear-gradient(0deg, rgba(1,1,56,1) 0%, rgba(5,5,133,1) 100%);
+  background-image: linear-gradient(to right bottom, #65465a, #754c61, #865366, #965a6a, #a6616c);
   color: white;
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
 }
 .redround{
-  width: 60px;
+  width: 90px;
   height: 30px;
   border-radius: 10px;
-  background: rgb(101,0,1);
-  background: linear-gradient(0deg, rgba(101,0,1,1) 0%, rgba(235,9,9,1) 100%);
+  background-image: linear-gradient(to right bottom, #fcb965, #ffc865, #ffd866, #fde86a, #f9f871);
   color: white;
+  cursor: pointer;
 }
 .greenround{
-  width: 60px;
+  width: 90px;
   height: 30px;
   border-radius: 10px;
-  background: rgb(1,56,9);
-  background: linear-gradient(0deg, rgba(1,56,9,1) 0%, rgba(9,133,5,1) 100%);
+  background-image: linear-gradient(to bottom, #78aeb2, #7fb7b7, #86c0bc, #8ec9c1, #97d2c5);
   color: white;
+  cursor: pointer;
 }
 
 .colorselect{
@@ -30,9 +42,30 @@
     margin: 0 5px;
   }
 }
+.activetheme{
+    color: black;
+
+    box-shadow:0px 0px 8px 0px #191a1a inset;
+  }
 .notegroup_color{
   width: 60%;
   display:block;
   margin: 0 auto;
   padding-bottom: 20px;
+}
+#notegroup_color_thème1{
+  width: 20px;
+  label{
+    display:none;
+  }
+}
+#notegroup_color_thème2{
+  width: 20px;
+}
+#notegroup_color_thème3{
+  width: 20px;
+}
+.colorthemebutton{
+  display: inline-block;
+  margin-bottom: 20px;
 }

@@ -1,14 +1,4 @@
-<div class="navbar">
-  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1589230080/note_logo_oy9nef.png" alt="">
-  <div class="avatar-group">
-    <div class="avatar-deco">
-      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: "true" },aria: { expanded: "false" } %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%></a>
-        </div>
-    </div>
-  </div>
-</div>
+<div class="fondcolor"> </div>
 
 <div class="container">
   <div class="note">
@@ -28,5 +18,4 @@
     <i class="fas fa-home back-home-note"></i>
   <% end %>
 </div>
-
 

@@ -9,6 +9,9 @@ import {invitation} from "../components/invitation";
 import {waiting} from "../components/waiting";
 import {dropdownnote} from "../components/dropdown_note";
 import {calendar} from "../components/calendrier";
+import {calendarnext} from "../components/calendarnext";
+import {calendarprev} from "../components/calendarprev";
+// import {activebutton} from "../components/activebutton";
 
 waiting();
 
@@ -18,3 +21,6 @@ animateHome();
 invitation();
 dropdownnote();
 calendar();
+calendarnext();
+calendarprev();
+// activebutton();
