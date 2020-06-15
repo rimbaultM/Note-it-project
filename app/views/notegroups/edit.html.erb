@@ -9,6 +9,7 @@
       <%= simple_form_for @notegroup do |f| %>
         <%= f.label "Titre de votre Note'Group" %>
         <%= f.text_field :title %>
+        <br>
          <div class="colorthemebutton">
          <%= f.radio_button :color, ["thème1"] , class: "blueround", label: "haha"%>
          <div class="blueround"></div>
@@ -21,7 +22,7 @@
          <%= f.radio_button :color, ["thème3"] , class: "greenround", label: "haha"%>
          <div class="greenround"></div>
       </div>
-
+    <br>
 
         <%= f.submit "Edition votre Note'Group", class: "button" %>
       <% end %>

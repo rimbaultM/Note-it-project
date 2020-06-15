@@ -154,9 +154,14 @@
                       <!-- <p class="note-date"> <%= note.date%> jours </p> -->
                       <% @time = (note.date - Date.today).to_i %>
                       <% if current_user == note.user %>
-                      <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                          <i class="fas fa-trash-alt poubellenote"></i>
-                        <% end %>
+                      <div class="note-edit">
+                        <%= link_to edit_notegroup_note_path(notegroup, note) do%>
+                            <i class="fas fa-edit edit-note"></i>
+                          <% end %>
+                        <%= link_to notegroup_note_path(notegroup, note), method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer cette note ?' } do%>
+                            <i class="fas fa-trash-alt poubellenote"></i>
+                          <% end %>
+                      </div>
                       <% end %>
                     </div>
                     <div class="my-note-space-2">

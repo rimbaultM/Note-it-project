@@ -1,0 +1,25 @@
+<div class="fondcolor"> </div>
+
+
+  <div class="note">
+      <div class="note-add-title">
+        <h2>Editez votre Note</h2>
+      </div>
+        <div class="form_new form_edit">
+          <div class="container">
+           <%= simple_form_for [@notegroup , @note ] do |f| %>
+            <%= f.input :title, placeholder: "Titre de votre Note (optionnel)", label: false %>
+            <%= f.input :content, placeholder: "Description de votre Note",  label: false %>
+          </div>
+          <div class="form_edit">
+            <%= f.input :date, label: "Quand doit se terminer votre Note?" %>
+          </div>
+          <%= f.submit "Créer votre Note", class: "button notebuttonadd" %>
+        <% end %>
+      </div>
+  </div>
+  <%= link_to notegroups_path do %>
+    <i class="fas fa-home back-home-note "></i>
+  <% end %>
+
+

@@ -1,8 +1,18 @@
 
 const dropdownnote = () => {
-
+    const menu = document.querySelector(".dropdown-block");
     $(".avatarmenu").click(function(){
-      $(".dropdown-block").toggle();
+          if (menu.style.display == "block") {
+            $(".dropdown-block").animate({
+              right:'-200px',
+            },500);
+            $(".dropdown-block").toggle();
+          }
+          else {
+            $(".dropdown-block").toggle().animate({
+              right:'0',
+            },500);
+          }
     });
 
     $(".notes-title0").click(function(){

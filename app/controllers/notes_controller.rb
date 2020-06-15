@@ -25,6 +25,18 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    @notegroup = Notegroup.find(params[:notegroup_id])
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @notegroup = Notegroup.find(params[:notegroup_id])
+    @note = Note.find(params[:id])
+    @note.update(note_params)
+    redirect_to notegroups_path
+  end
+
   def destroy
       @note = Note.find(params[:id])
       @note.destroy

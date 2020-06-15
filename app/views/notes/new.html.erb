@@ -10,12 +10,12 @@
           <%= f.input :title, placeholder: "Titre de votre Note (optionnel)", label: false %>
           <%= f.input :content, placeholder: "Description de votre Note",  label: false %>
           <%= f.input :date, label: "Quand doit se terminer votre Note?" %>
-          <%= f.submit "Créez votre Note", class: "button" %>
+          <%= f.submit "Créer votre Note", class: "button notebuttonadd" %>
         <% end %>
       </div>
   </div>
   <%= link_to notegroups_path do %>
-    <i class="fas fa-home back-home-note"></i>
+    <i class="fas fa-home back-home-note "></i>
   <% end %>
 </div>
 
