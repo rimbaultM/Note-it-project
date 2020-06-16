@@ -113,3 +113,28 @@ body {font-family: Verdana, sans-serif;}
   background-image: linear-gradient(to bottom, #78aeb2, #7fb7b7, #86c0bc, #8ec9c1, #97d2c5);
   color: white !important
 }
+.thisdays {
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: inset 2px 2px 4px #b5b5b5,
+            inset -2px -2px 4px #f5f5f5;
+}
+.thisdays2 {
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: inset 2px 2px 4px #b5b5b5,
+            inset -2px -2px 4px #f5f5f5;
+  color: black !important;
+  border: 1px solid grey;
+  opacity: 0.5;
+}
+.detailsday{
+  display:none;
+  text-align: center;
+  background-color: #eee;
+  list-style: none;
+  .calendargroupnotetitle{
+    font-family: 'Damion', cursive;
+    font-size: 20px;
+  }
+}

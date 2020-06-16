@@ -11,6 +11,7 @@ import {dropdownnote} from "../components/dropdown_note";
 import {calendar} from "../components/calendrier";
 import {calendarnext} from "../components/calendarnext";
 import {calendarprev} from "../components/calendarprev";
+import {calendardetails} from "../components/calendardetails";
 // import {activebutton} from "../components/activebutton";
 
 waiting();
@@ -23,4 +24,5 @@ dropdownnote();
 calendar();
 calendarnext();
 calendarprev();
+calendardetails();
 // activebutton();

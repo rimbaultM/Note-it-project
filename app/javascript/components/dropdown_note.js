@@ -5,7 +5,7 @@ const dropdownnote = () => {
           if (menu.style.display == "block") {
             $(".dropdown-block").animate({
               right:'-200px',
-            },500);
+            },50);
             $(".dropdown-block").toggle();
           }
           else {

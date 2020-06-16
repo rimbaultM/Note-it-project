@@ -70,6 +70,11 @@
   <ul class="days" id="days">
 
   </ul>
+
+  <div class="detailsday">
+
+  </div>
+
   </div>
 
 <div class="add-notegroup">
@@ -164,29 +169,34 @@
                       </div>
                       <% end %>
                     </div>
-                    <div class="my-note-space-2">
-                      <p class="note-content"> <%= note.content%> </p>
-                    </div>
-                    <div class="my-note-space-3">
-                      <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
-                      <div class="date-done">
-                        <% if note.done == false %>
-                          <!-- <i class="fas fa-times note-done-false"></i> -->
-                        <% else %>
-                          <!-- <i class="far fa-check-circle note-done-true"></i> -->
-                        <% end %>
-                        <% if @time >= 1 %>
-                         <p class="note-date-green"> il reste <%= (note.date - Date.today).to_i %> jours </p>
-                         <p id="testdate" > <%= note.date %> </p>
-                        <% elsif @time == 0 %>
-                          <p class="note-date-red"> Expire aujourd'hui </p>
-                          <p id="testdate" > <%= note.date %> </p>
-                        <% else %>
-                          <p class="note-date-red"> A expiré depuis <%= (Date.today - note.date).to_i %> <% if @time == -1  %> jour <% else %> jours <% end %></p>
-                          <p id="testdate" > <%= note.date %> </p>
-                        <% end %>
+
+                    <div class="my-note-content">
+                      <div class="my-note-space-2">
+                        <p class="note-content"> <%= note.content%> </p>
+                      </div>
+                      <div class="my-note-space-3">
+                        <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
+                        <div class="date-done">
+                          <% if note.done == false %>
+                            <!-- <i class="fas fa-times note-done-false"></i> -->
+                          <% else %>
+                            <!-- <i class="far fa-check-circle note-done-true"></i> -->
+                          <% end %>
+                          <% if @time >= 1 %>
+                           <p class="note-date-green"> il reste <%= (note.date - Date.today).to_i %> jours </p>
+                           <p id="testdate" > <%= note.date %> </p>
+                          <% elsif @time == 0 %>
+                            <p class="note-date-red"> Expire aujourd'hui </p>
+                            <p id="testdate" > <%= note.date %> </p>
+                          <% else %>
+                            <p class="note-date-red"> A expiré depuis <%= (Date.today - note.date).to_i %> <% if @time == -1  %> jour <% else %> jours <% end %></p>
+                            <p id="testdate" > <%= note.date %> </p>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
+
+
                     <div class="bordernote"></div>
 
                 <% end %>
