@@ -1,3 +1,5 @@
+import {calendardetails} from "../components/calendardetails";
+
 const calendarnext = () => {
     const yearcalendar = new Date().getFullYear();
     const monthcalendar = new Date().getMonth();
@@ -33,7 +35,12 @@ const calendarnext = () => {
           if ((year.innerText+"-"+ "0" +(mois.indexOf(month.innerText)+1)+"-"+ value) == (`${yearcalendar}-0${monthcalendar+1}-${daycalendar}`)) {
           document.querySelectorAll('#days > li:last-child').forEach(thisdays)
             function thisdays(day){
-              day.classList.add("thisdays")
+              if (days.classList.contains('calendarred') || days.classList.contains('calendarblue') || days.classList.contains('calendargreen') ) {
+                day.classList.add("thisdays2")
+              }
+              else  {
+                day.classList.add("thisdays")
+              }
             }
           }
         }
@@ -67,6 +74,7 @@ const calendarnext = () => {
     }
 
     next.addEventListener("click", function() {
+    $(".detailsday").css("display","none");
     document.querySelectorAll('#days > li').forEach(eachdaysstart);
     function eachdaysstart(eachday){
       eachday.classList.remove("calendarblue");
@@ -102,6 +110,7 @@ const calendarnext = () => {
           }
           const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
           day30.forEach(adddays);
+          calendardetails();
         }
         else if (month.innerText == "FEVRIER"){
           const reloadcalendar = document.getElementById("days");
@@ -110,6 +119,7 @@ const calendarnext = () => {
           }
           const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
           day30.forEach(adddays);
+          calendardetails();
         }
         else {
           const reloadcalendar = document.getElementById("days");
@@ -118,6 +128,7 @@ const calendarnext = () => {
           }
           const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
+          calendardetails();
         }
       }
 

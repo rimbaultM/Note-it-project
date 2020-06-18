@@ -12,11 +12,10 @@ import {calendar} from "../components/calendrier";
 import {calendarnext} from "../components/calendarnext";
 import {calendarprev} from "../components/calendarprev";
 import {calendardetails} from "../components/calendardetails";
-// import {activebutton} from "../components/activebutton";
+
+
 
 waiting();
-
-
 addfriend();
 animateHome();
 invitation();
@@ -25,4 +24,5 @@ calendar();
 calendarnext();
 calendarprev();
 calendardetails();
-// activebutton();
+
+

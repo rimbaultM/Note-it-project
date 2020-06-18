@@ -1,25 +1,26 @@
 const calendar = () => {
     $(".calendar-nav").click(function(){
       $(".calendar").toggle();
+      $(".detailsday").css("display","none");
+      document.querySelectorAll('.days > li').forEach(daysclick);
+      function daysclick(dayclick) {
+        dayclick.classList.remove("thisdays2")
+      }
+
     });
     const yearcalendar = new Date().getFullYear();
     const monthcalendar = new Date().getMonth();
     const daycalendar = new Date().getDate();
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
     const month = document.getElementById("month");
     const year = document.getElementById("year");
     const days = document.getElementById("days");
-    const testdate = document.getElementById("testdate")
     const mois = ["JANVIER", "FEVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET", "AOUT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DECEMBRE"]
-
     month.innerText = mois[new Date().getMonth()];
     year.innerText = new Date().getFullYear();
 
     if (month.innerText == "JUIN" || month.innerText == "MAI" || month.innerText == "SEPTEMBRE" || month.innerText == "NOVEMBRE"){
       const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
       day30.forEach(adddays);
-
     }
     else if (month.innerText == "FEVRIER"){
       const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
@@ -39,7 +40,6 @@ const calendar = () => {
           if ((year.innerText+"-"+ "0" +(mois.indexOf(month.innerText)+1)+"-"+ value) == testdatetest) {
             document.querySelectorAll('#days > li:last-child').forEach(addactive);
             function addactive(li) {
-
               if ((listestrr.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[1]).classList.contains('notes-title-blue')) {
                 li.classList.add("calendarblue");
               }
@@ -60,7 +60,6 @@ const calendar = () => {
               else  {
                 day.classList.add("thisdays")
               }
-
             }
           }
         }
