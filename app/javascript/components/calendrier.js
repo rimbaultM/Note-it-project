@@ -6,6 +6,8 @@ const calendar = () => {
       function daysclick(dayclick) {
         dayclick.classList.remove("thisdays2")
       }
+      const days = document.querySelector(".days")
+      days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
 
     });
     const yearcalendar = new Date().getFullYear();
@@ -32,7 +34,7 @@ const calendar = () => {
     }
 
     function adddays(value) {
-      days.insertAdjacentHTML('beforeend', "<li>" + value + "</li>")
+      days.insertAdjacentHTML('beforeend', "<li class=dateindex>" + value + "</li>")
       if (mois.indexOf(month.innerText) < 10) {
         document.querySelectorAll('#testdate').forEach(listest);
         function listest(listestrr) {

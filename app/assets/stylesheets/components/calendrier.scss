@@ -2,7 +2,6 @@ ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 .calendar{
   margin: 0 auto;
-  padding-top: 50px;
   display: block;
   width: 95%;
   height: 80%;
@@ -152,4 +151,18 @@ body {font-family: Verdana, sans-serif;}
 .nonotecalendar{
   font-family: 'Damion', cursive;
   font-size: 20px;
+}
+.styleweek{
+  background-color: #ddd;
+  height: 179px;
+  width: 27%;
+  position: absolute;
+  top: 179px;
+  opacity: 0.4;
+  left: 263px;
+  border-bottom-right-radius: 8px;
+}
+.dateindex{
+  position: relative;
+  z-index: 1;
 }

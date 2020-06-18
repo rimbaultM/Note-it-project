@@ -90,7 +90,7 @@ const calendarnext = () => {
         while (reloadcalendar.firstChild){
           reloadcalendar.removeChild(reloadcalendar.firstChild);
         }
-        const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+        const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
         day30.forEach(adddays);
 
         return year.innerText = thisyear +1;
@@ -103,7 +103,53 @@ const calendarnext = () => {
         })();
         month.innerText = mois[nextmonth()];
 
-        if (month.innerText == "AVRIL" ||  month.innerText == "JUIN" || month.innerText == "SEPTEMBRE" || month.innerText == "NOVEMBRE"){
+        if (month.innerText == "JANVIER"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+
+        else if (month.innerText == "FEVRIER"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "MARS"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "AVRIL" ){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "MAI"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "JUIN"){
           const reloadcalendar = document.getElementById("days");
           while (reloadcalendar.firstChild){
             reloadcalendar.removeChild(reloadcalendar.firstChild);
@@ -112,24 +158,61 @@ const calendarnext = () => {
           day30.forEach(adddays);
           calendardetails();
         }
-        else if (month.innerText == "FEVRIER"){
+        else if (month.innerText == "JUILLET"){
           const reloadcalendar = document.getElementById("days");
           while (reloadcalendar.firstChild){
             reloadcalendar.removeChild(reloadcalendar.firstChild);
           }
-          const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
+          const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
         }
-        else {
+        else if (month.innerText == "AOUT"){
           const reloadcalendar = document.getElementById("days");
           while (reloadcalendar.firstChild){
             reloadcalendar.removeChild(reloadcalendar.firstChild);
           }
-          const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          const day30 = ["","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
         }
+        else if (month.innerText == "SEPTEMBRE"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "OCTOBRE"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "NOVEMBRE"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+        else if (month.innerText == "DECEMBRE"){
+          const reloadcalendar = document.getElementById("days");
+          while (reloadcalendar.firstChild){
+            reloadcalendar.removeChild(reloadcalendar.firstChild);
+          }
+          const day30 = ["","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+          day30.forEach(adddays);
+          calendardetails();
+        }
+
       }
 
     });
