@@ -1,7 +1,7 @@
 
 {
   "background_color": "white",
-  "description": "Le Wagon is Europe's best coding bootcamp for creative people & entrepreneurs. Learn to code in 9 weeks with our fullstack coding bootcamp.",
+  "description": "Note'It, It's your turn!.",
   "display": "fullscreen",
   "icons": [
     {
@@ -12,7 +12,7 @@
     {},
     {}
   ],
-  "name": "Le Wagon coding bootcamp",
-  "short_name": "Le Wagon",
+  "name": "Note'It",
+  "short_name": "Note'It",
   "start_url": "/"
 }
