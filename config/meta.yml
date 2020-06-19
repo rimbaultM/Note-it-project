@@ -1,0 +1,7 @@
+meta_product_name: "Note'It"
+meta_title: "Note'It"
+meta_description: "It's your turn!"
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
+
+
