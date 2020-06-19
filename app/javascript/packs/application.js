@@ -1,4 +1,5 @@
 require("@rails/ujs").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -14,15 +15,15 @@ import {calendarprev} from "../components/calendarprev";
 import {calendardetails} from "../components/calendardetails";
 
 
-
-waiting();
-addfriend();
-animateHome();
-invitation();
-dropdownnote();
-calendar();
-calendarnext();
-calendarprev();
-calendardetails();
-
+document.addEventListener('turbolinks:load', () => {
+  waiting();
+  addfriend();
+  animateHome();
+  invitation();
+  dropdownnote();
+  calendar();
+  calendarnext();
+  calendarprev();
+  calendardetails();
+});
 
