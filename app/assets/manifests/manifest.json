@@ -1,7 +1,7 @@
 
 {
   "background_color": "white",
-  "description": "Note'It, Its your turn!",
+  "description": "Note'it - It's your turn!",
   "display": "fullscreen",
   "icons": [
     {
@@ -12,7 +12,7 @@
     {},
     {}
   ],
-  "name": "Note'It",
-  "short_name": "Note'It",
+  "name": "Note'it",
+  "short_name": "Note'it",
   "start_url": "/"
 }
