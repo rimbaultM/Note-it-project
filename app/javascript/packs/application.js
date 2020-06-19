@@ -1,5 +1,5 @@
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
@@ -15,7 +15,7 @@ import {calendarprev} from "../components/calendarprev";
 import {calendardetails} from "../components/calendardetails";
 
 
-// document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', () => {
   waiting();
   addfriend();
   animateHome();
@@ -25,5 +25,5 @@ import {calendardetails} from "../components/calendardetails";
   calendarnext();
   calendarprev();
   calendardetails();
-// });
+});
 
