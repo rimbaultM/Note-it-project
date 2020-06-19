@@ -1,18 +1,18 @@
-
+// app/assets/javascript/manifest.json.erb
 {
   "background_color": "white",
-  "description": "Note'it - It's your turn!",
+  "description": "Le Wagon is Europe's best coding bootcamp for creative people & entrepreneurs. Learn to code in 9 weeks with our fullstack coding bootcamp.",
   "display": "fullscreen",
   "icons": [
     {
-      "src": "<%= image_path 'icons/apple-icon-180x180.png' %>",
-      "sizes": "180x180",
+      "src": "<%= image_path 'icons/android-icon-192x192.png' %>",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {},
     {}
   ],
-  "name": "Note'it",
-  "short_name": "Note'it",
+  "name": "Le Wagon coding bootcamp",
+  "short_name": "Le Wagon",
   "start_url": "/"
 }
