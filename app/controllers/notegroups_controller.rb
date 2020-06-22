@@ -5,6 +5,7 @@ class NotegroupsController < ApplicationController
     @notegroups = Notegroup.all
     @users = User.all
     @members = Member.all
+
   end
 
   def show

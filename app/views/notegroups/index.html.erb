@@ -154,7 +154,7 @@
                 <% if notegroup.notes.count <=0 %>
                     <p class="noteless">aucune note</p>
                 <% else %>
-                <% notegroup.notes.each do |note| %>
+                <% notegroup.notes.order(date: :asc).each do |note| %>
                     <div class="my-note-space">
                       <h3 class="note-title"> <%= note.title%> </h3>
                       <!-- <p class="note-date"> <%= note.date%> jours </p> -->
