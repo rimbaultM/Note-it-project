@@ -10,10 +10,10 @@ const calendarnext = () => {
     const year = document.getElementById("year");
     const days = document.getElementById("days");
     const testdate = document.getElementById("testdate")
-    const mois = ["JANVIER", "FEVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET", "AOUT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DECEMBRE"]
+    const mois = ["JANVIER", "FEVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET", "AOUT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DECEMBRE"];
 
     function adddays(value) {
-      days.insertAdjacentHTML('beforeend', "<li>" + value + "</li>")
+      days.insertAdjacentHTML('beforeend', "<li class=dateindex>" + value + "</li>")
       if (mois.indexOf(month.innerText) < 10) {
         document.querySelectorAll('#testdate').forEach(listest);
         function listest(listestrr) {
@@ -74,7 +74,9 @@ const calendarnext = () => {
     }
 
     next.addEventListener("click", function() {
+
     $(".detailsday").css("display","none");
+
     document.querySelectorAll('#days > li').forEach(eachdaysstart);
     function eachdaysstart(eachday){
       eachday.classList.remove("calendarblue");
@@ -82,6 +84,7 @@ const calendarnext = () => {
       eachday.classList.remove("calendargreen");
       eachday.classList.remove("thisdays");
     }
+
 
       if (month.innerText == "DECEMBRE") {
         month.innerText = mois[0];
@@ -111,6 +114,8 @@ const calendarnext = () => {
           const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
 
         else if (month.innerText == "FEVRIER"){
@@ -121,6 +126,8 @@ const calendarnext = () => {
           const day30 = ["","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "MARS"){
           const reloadcalendar = document.getElementById("days");
@@ -130,6 +137,8 @@ const calendarnext = () => {
           const day30 = ["","","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "AVRIL" ){
           const reloadcalendar = document.getElementById("days");
@@ -139,6 +148,8 @@ const calendarnext = () => {
           const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "MAI"){
           const reloadcalendar = document.getElementById("days");
@@ -148,6 +159,8 @@ const calendarnext = () => {
           const day30 = ["","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "JUIN"){
           const reloadcalendar = document.getElementById("days");
@@ -157,6 +170,8 @@ const calendarnext = () => {
           const day30 = ["01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "JUILLET"){
           const reloadcalendar = document.getElementById("days");
@@ -166,6 +181,8 @@ const calendarnext = () => {
           const day30 = ["","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "AOUT"){
           const reloadcalendar = document.getElementById("days");
@@ -175,6 +192,8 @@ const calendarnext = () => {
           const day30 = ["","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "SEPTEMBRE"){
           const reloadcalendar = document.getElementById("days");
@@ -184,6 +203,8 @@ const calendarnext = () => {
           const day30 = ["","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "OCTOBRE"){
           const reloadcalendar = document.getElementById("days");
@@ -193,6 +214,8 @@ const calendarnext = () => {
           const day30 = ["","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "NOVEMBRE"){
           const reloadcalendar = document.getElementById("days");
@@ -202,6 +225,8 @@ const calendarnext = () => {
           const day30 = ["","","","","","","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
         else if (month.innerText == "DECEMBRE"){
           const reloadcalendar = document.getElementById("days");
@@ -211,6 +236,8 @@ const calendarnext = () => {
           const day30 = ["","01","02","03","04","05","06","07","08","09",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
           day30.forEach(adddays);
           calendardetails();
+          const daysstyleweek = document.querySelector(".days")
+          days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
         }
 
       }

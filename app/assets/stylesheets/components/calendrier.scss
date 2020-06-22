@@ -66,6 +66,7 @@ body {font-family: Verdana, sans-serif;}
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   margin: 0;
+  position: relative;
 }
 
 .days li {
@@ -154,13 +155,14 @@ body {font-family: Verdana, sans-serif;}
 }
 .styleweek{
   background-color: #ddd;
-  height: 179px;
-  width: 27%;
+  height: 100%;
+  width: 28%;
   position: absolute;
-  top: 179px;
+  top: 0px;
   opacity: 0.4;
-  left: 263px;
+  right:0;
   border-bottom-right-radius: 8px;
+
 }
 .dateindex{
   position: relative;

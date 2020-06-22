@@ -6,8 +6,10 @@ const calendar = () => {
       function daysclick(dayclick) {
         dayclick.classList.remove("thisdays2")
       }
+
       const days = document.querySelector(".days")
-      days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>")
+      const daysstyle = document.querySelector(".days > .styleweek")
+      if (!daysstyle) { days.insertAdjacentHTML('beforeend', "<div class=styleweek></div>") }
 
     });
     const yearcalendar = new Date().getFullYear();
